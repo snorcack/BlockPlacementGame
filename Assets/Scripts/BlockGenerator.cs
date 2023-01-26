@@ -30,6 +30,10 @@ public class BlockGenerator : MonoBehaviour
 
     }   
 
+    /// <summary>
+    /// This method will create and save the rotation of all available block types. Can be moved to JSON later
+    /// stored as vector coordinates of the block, the order of the tiles doesn't matter.
+    /// </summary>
     private void InitializeBlocks ()
     {
         for (int i=0;i<6;i++)

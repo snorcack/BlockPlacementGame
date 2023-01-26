@@ -15,7 +15,9 @@ public class MainGame : MonoBehaviour
 
         InitializeBoard();
     }
-
+    /// <summary>
+    /// Generate the initial board of tiles
+    /// </summary>
     void InitializeBoard()
     {
         float tileGap = 0.5f;
@@ -46,7 +48,9 @@ public class MainGame : MonoBehaviour
 
     }
 
-
+    /// <summary>
+    /// Checks if a block fits on the board. This runs for all kinds of blocks available for placement
+    /// </summary>
     public void CheckBlockFit ()
     {
         int isAvailable =0 ;
@@ -61,6 +65,13 @@ public class MainGame : MonoBehaviour
         Debug.Log("Available rotations are" + isAvailable);
     }
 
+
+
+    /// <summary>
+    /// This method will check each rotation for each block, if it can be placed on board.
+    /// </summary>
+    /// <param name="inBlock"></param>
+    /// <returns></returns>
     public int CheckBlockRotationFit ( Block inBlock)
     {
         int rotations = 0;
@@ -75,6 +86,13 @@ public class MainGame : MonoBehaviour
         return rotations;
     }
 
+
+    /// <summary>
+    /// This method checks if one specific rotation will fit on the space starting from the current tile.
+    /// It will check each unfilled tile to check if a block can be accomodated.
+    /// </summary>
+    /// <param name="inBlockRot"></param>
+    /// <returns></returns>
     public bool CheckTileAvailability (List<Vector2> inBlockRot)
     {
         for (int i=0;i<10;i++)
